@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateImageSuscriptionsTable extends Migration
+class CreateSocialMediaSuscriptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateImageSuscriptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('image_suscriptions', function (Blueprint $table) {
+        Schema::create('social_media_suscriptions', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('image_id');
-            $table->foreign('image_id')->references('id')->on('images');
-            $table->string('type');
-            $table->string('selected');
+            $table->unsignedBigInteger('social_media_id');
+            $table->foreign('social_media')->references('id')->on('social_medias');
+            $table->string('tag');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateImageSuscriptionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('image_suscriptions');
+        Schema::dropIfExists('social_media_suscriptions');
     }
 }
