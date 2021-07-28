@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('description')->default("Hey, this is my cube!");;
             $table->string('phone')->default("vacio");
             $table->integer('age')->default(0);
-            $table->date('birth_date')->default("00:00:00");
+            $table->date('birth_date')->nullable();
             
             $table->integer('lenguage')->default(1);
             $table->integer('theme')->default(1);
