@@ -21,10 +21,16 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('description');
-            $table->string('phone');
-            $table->integer('age');
-            $table->date('birth_date');
+            $table->string('description')->default("Hey, this is my cube!");;
+            $table->string('phone')->default("vacio");
+            $table->integer('age')->default(0);
+            $table->date('birth_date')->default("00:00:00");
+            
+            $table->integer('lenguage')->default(1);
+            $table->integer('theme')->default(1);
+            $table->integer('profile_privacy')->default(1);
+            $table->integer('content_privacy')->default(1);
+            $table->integer('friend_request_privacy')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });

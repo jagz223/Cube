@@ -19,7 +19,7 @@ class CreateSocialMediaSuscriptionsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('social_media_id');
             $table->foreign('social_media')->references('id')->on('social_medias');
-            $table->string('tag');
+            $table->string('Social_media_name');
             $table->timestamps();
         });
     }

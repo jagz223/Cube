@@ -20,7 +20,7 @@ class CreateImageSuscriptionsTable extends Migration
             $table->unsignedBigInteger('image_id');
             $table->foreign('image_id')->references('id')->on('images');
             $table->string('type');
-            $table->string('selected');
+            $table->boolean('selected');
             $table->timestamps();
         });
     }
